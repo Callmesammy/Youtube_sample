@@ -1,6 +1,9 @@
 
 package Model;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 
 public class Model_Menu {
 
@@ -46,17 +49,37 @@ public class Model_Menu {
         this.description = description;
     }
 
-    public Model_Menu(String icon, String name, String description) {
-        this.icon = icon;
-        this.name = name;
-        this.description = description;
+    /**
+     * @return the Type
+     */
+    public menuType getType() {
+        return Type;
     }
-    
+
+    /**
+     * @param Type the Type to set
+     */
+    public void setType(menuType Type) {
+        this.Type = Type;
+    }
     private String icon;
     private String name;
     private String description;
+    private menuType Type;
+
+    public Model_Menu(String icon, String name, String description, menuType Type) {
+        this.icon = icon;
+        this.name = name;
+        this.description = description;
+        this.Type = Type;
+    }
 
     public Model_Menu() {
     }
-    public void 
+      public Icon toIcon(){
+        return new ImageIcon(getClass().getResource("/some/icon/" +icon+ ".png"));
+    }
+    public static enum menuType {
+        MENU, TITLE, EMPTY
+    }
 }
