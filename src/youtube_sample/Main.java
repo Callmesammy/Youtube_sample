@@ -2,6 +2,10 @@
 package youtube_sample;
 
 import Components.EventMenuSelected;
+import Components.Page0;
+import Components.Page1;
+import Components.Page2;
+import Components.Page4;
 import java.awt.Color;
 import javax.swing.JComponent;
 
@@ -15,13 +19,24 @@ public class Main extends javax.swing.JFrame {
           menu2.AddEventMenuSelected(new EventMenuSelected() {
             @Override
             public void Onclick(int index) {
-             System.out.println("Click :" +index);
+                if (index ==1) {
+                    addFrame(new Page0());
+                }else if (index ==2) {
+                     addFrame(new Page1());
+                }else if (index ==3) {
+                     addFrame(new Page2());
+                }else if (index ==4) {
+                     addFrame(new Page4());
+                }
             }
           });
     }
-private void addFrame(JComponent com){
-    
-}
+        private void addFrame(JComponent com){
+           panelPane.removeAll();
+           panelPane.add(com);
+           panelPane.repaint();
+           panelPane.revalidate();
+        }
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

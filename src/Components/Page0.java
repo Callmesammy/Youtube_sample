@@ -8,12 +8,12 @@ package Components;
  *
  * @author user
  */
-public class Page1 extends javax.swing.JPanel {
+public class Page0 extends javax.swing.JPanel {
 
     /**
      * Creates new form Page1
      */
-    public Page1() {
+    public Page0() {
         initComponents();
     }
 
@@ -28,12 +28,13 @@ public class Page1 extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(43, 0, 0));
+        setBackground(new java.awt.Color(102, 102, 0));
+        setForeground(new java.awt.Color(51, 51, 0));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("FORM 2");
+        jLabel1.setText("FORM 1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
