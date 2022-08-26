@@ -45,7 +45,16 @@ public class ListMenu <E extends Object> extends JList<E>{
                     
                 }
             }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+              next =-1;
+              selectedIndex = -1;
+              repaint();
+            }
+            
         });
+        
         addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseMoved(MouseEvent e) {
@@ -59,13 +68,21 @@ public class ListMenu <E extends Object> extends JList<E>{
                             }
                             
                             }else{
-                            
+                            next = -1;
                         }
                      repaint();
                 }
                
             }
+
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                super.mouseDragged(e); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+            }
+            
         });
+        
+        
     }
 
     @Override
@@ -86,6 +103,7 @@ public class ListMenu <E extends Object> extends JList<E>{
             }
             
         };
+        
     }
     
     public void addItem(Model_Menu data){
