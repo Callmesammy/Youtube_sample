@@ -8,13 +8,17 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
-/**
- *
- * @author user
- */
+
+
 public class Menu extends javax.swing.JPanel {
 
+    private EventMenuSelected event;
     
+    public void AddEventMenuSelected(EventMenuSelected event){
+        this.event=event;
+        listMenu1.AddEventMenuSelected(event);
+        repaint();
+    }
     public Menu() {
         initComponents();
         setOpaque(false);

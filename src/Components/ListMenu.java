@@ -19,6 +19,12 @@ public class ListMenu <E extends Object> extends JList<E>{
     private  int selectedIndex = -1;
     private int next = -1;
 
+      private EventMenuSelected event;
+    
+    public void AddEventMenuSelected(EventMenuSelected event){
+        this.event=event;
+        repaint();
+    }
     public ListMenu(DefaultListModel model) {
         this.model = model;
     }
@@ -37,6 +43,10 @@ public class ListMenu <E extends Object> extends JList<E>{
                        Model_Menu menu = (Model_Menu)value;
                             if(menu.getType()==Model_Menu.MenuType.MENU){
                                 selectedIndex = index;
+                                if(event!=null){
+                                    event.Onclick(index);
+                                    
+                                }
                             }
                         }else{
                         selectedIndex = index;
