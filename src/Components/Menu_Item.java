@@ -11,6 +11,13 @@ import java.awt.RenderingHints;
 
 public class Menu_Item extends javax.swing.JPanel {
 
+    /**
+     * @param selected the selected to set
+     */
+ 
+
+    private boolean selected;
+    
    private Model_Menu data;
     public Menu_Item(Model_Menu data) {
         initComponents();
@@ -25,6 +32,10 @@ public class Menu_Item extends javax.swing.JPanel {
         }else if (data.getType()==Model_Menu.menuType.EMPTY) {
             ibiname.setText(" ");
         }
+    }
+       public void setSelected(boolean selected) {
+        this.selected = selected;
+        repaint();
     }
 
   
@@ -60,10 +71,13 @@ public class Menu_Item extends javax.swing.JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
-        Graphics2D g2 = (Graphics2D)g;
+        if (selected) {
+            Graphics2D g2 = (Graphics2D)g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setColor(new Color(255,255,255,80));
-        g2.fillRect(0, 0, getWidth(), getHeight());
+        g2.fillRect(0, 0, getWidth(), getHeight()); 
+        }
+       
         super.paintComponent(g); 
     }
 
