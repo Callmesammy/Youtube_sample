@@ -58,7 +58,7 @@ public class Text_Model {
     }
 
     public Text_Model() {
-    } g
+    } 
     
     private String topic;
     private String description;
