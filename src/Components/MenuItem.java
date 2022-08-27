@@ -3,6 +3,7 @@ package Components;
 
 import Model.Model_Menu;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -23,6 +24,7 @@ public class MenuItem extends javax.swing.JPanel {
         if (data.getType()==Model_Menu.MenuType.MENU) {
             ibicon.setIcon(data.toIcon());
             ibiname.setText(data.getName());
+            
             
         }else if (data.getType()==Model_Menu.MenuType.TITLE) {
             ibicon.setText(data.getName());

@@ -3,6 +3,7 @@ package Components;
 
 import Model.Model_Menu;
 import java.awt.Component;
+import java.awt.Cursor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -43,7 +44,7 @@ public class ListMenu <E extends Object> extends JList<E>{
                        Model_Menu menu = (Model_Menu)value;
                             if(menu.getType()==Model_Menu.MenuType.MENU){
                                 selectedIndex = index;
-                                if(event!=null){
+                                    if(event!=null){
                                     event.Onclick(index);
                                     
                                 }
@@ -74,7 +75,9 @@ public class ListMenu <E extends Object> extends JList<E>{
                         if (value instanceof Model_Menu) {
                             Model_Menu data = (Model_Menu)value;
                             if (data.getType()==Model_Menu.MenuType.MENU) {
+                                
                                 next = index;
+                               
                             }
                             
                             }else{
