@@ -8,12 +8,12 @@ package Slider_Animation.Sliders;
  *
  * @author user
  */
-public class Slide1 extends javax.swing.JPanel {
+public class Slide2 extends javax.swing.JPanel {
 
     /**
      * Creates new form Slide1
      */
-    public Slide1() {
+    public Slide2() {
         initComponents();
     }
 
@@ -28,7 +28,7 @@ public class Slide1 extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(51, 51, 255));
+        setBackground(new java.awt.Color(204, 0, 0));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
