@@ -31,18 +31,19 @@ public void addImage(Text_Model data){
     this.data = data;
     isTopic.setText(data.getTopic());
     isDescription.setText(data.getDescription());
-    
-    
     repaint();
 }
 
     @Override
     protected void paintComponent(Graphics g) {
-        Graphics2D g2 = (Graphics2D)g;
+        if (data != null) {
+             Graphics2D g2 = (Graphics2D)g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
         Rectangle size = getAutoSize(data.getIcon());
        g2.drawImage(getImage(data.getIcon()), size.x,size.y,size.width,size.height, null);
+        }
+       
         super.paintComponent(g); 
     }
 public Image getImage(Icon image){
@@ -76,7 +77,8 @@ public Image getImage(Icon image){
         isTopic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         isTopic.setText("TOPICS");
 
-        isDescription.setForeground(new java.awt.Color(255, 255, 255));
+        isDescription.setForeground(new java.awt.Color(51, 51, 51));
+        isDescription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         isDescription.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -86,15 +88,15 @@ public Image getImage(Icon image){
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(isTopic, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                    .addComponent(isDescription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(isDescription, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(isTopic, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(isTopic, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(isTopic)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(isDescription)
                 .addContainerGap(30, Short.MAX_VALUE))
