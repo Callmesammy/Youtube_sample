@@ -48,8 +48,32 @@ public class Slide extends javax.swing.JLayeredPane {
         }
       
         }
+       
+        }
+         public void next(){
+            if (!animate.isRunning()) {
+                selected = true;
+                selectedIndex = getnext(selectedIndex);
+                componentShow = panel.getComponent(selectedIndex);
+                componentOut = panel.getComponent(checknext(selectedIndex +1));
+            }
+         
     }
-   
+    private int getnext(int index){
+        if (index == panel.getComponentCount()-1) {
+            return 0;
+        }else{
+            return index+1;
+        }
+              
+          }
+    private int checknext(int index){
+        if (index == -1) {
+            return panel.getComponentCount() -1;
+        }else{
+            return index;
+        }
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
