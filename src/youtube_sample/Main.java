@@ -3,7 +3,7 @@ package youtube_sample;
 
 import Components.EventMenuSelected;
 import Components.Page0;
-import Components.Page1;
+import Slider_Animation.Page1;
 import Components.Page2;
 import Components.Page4;
 import java.awt.Color;
